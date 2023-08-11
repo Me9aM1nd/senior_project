@@ -12,6 +12,7 @@ RM := rm -rf
 -include Drivers/STM32F1xx_HAL_Driver/Src/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
+-include Apps/Src/subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -60,8 +61,8 @@ all: main-build
 main-build: Senior_Project.elf secondary-outputs
 
 # Tool invocations
-Senior_Project.elf Senior_Project.map: $(OBJS) $(USER_OBJS) C:\Users\user\Desktop\P\Senior\ project\STM\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Senior_Project.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\user\Desktop\P\Senior project\STM\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Senior_Project.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Senior_Project.elf Senior_Project.map: $(OBJS) $(USER_OBJS) C:\Users\user\Desktop\P\Senior\ project\senior_project\STM\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Senior_Project.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\user\Desktop\P\Senior project\senior_project\STM\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Senior_Project.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
