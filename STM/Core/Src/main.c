@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "dev_trace.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -104,7 +105,16 @@ int main(void)
   MX_DMA_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
+  dev_trace_init_t trace_init;
+  trace_init.mosi.port = GPIO_PA;
+  trace_init.sck.port = GPIO_PA;
+  trace_init.nss.port = GPIO_PA;
+  trace_init.mosi.pin =BB(0, b00000001);
+  trace_init.sck.pin = BB(0, b00000010);
+  trace_init.nss.pin = BB(0, b00000100);
+  dev_trace_init(&trace_init);
 
+  debug_printf("\r\n\n\n\n******HUMAN HEALTH MONITORING SENSOR******\r\n");
 
   uint32_t serial_id = 1717;
   uint32_t temperature = 3755;

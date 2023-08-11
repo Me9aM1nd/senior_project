@@ -21,7 +21,12 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
- ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
+ D:/universiteti/Senior\ project/senior_project/STM/Apps/Inc/dev_trace.h \
+ D:/universiteti/Senior\ project/senior_project/STM/Apps/Inc/binary.h \
+ D:/universiteti/Senior\ project/senior_project/STM/Apps/Inc/hal_gpio.h \
+ D:/universiteti/Senior\ project/senior_project/STM/Apps/Inc/global_def.h \
+ D:/universiteti/Senior\ project/senior_project/STM/Apps/Inc/hal_driver_def.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 ../Core/Inc/stm32f1xx_hal_conf.h:
@@ -46,3 +51,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
+D:/universiteti/Senior\ project/senior_project/STM/Apps/Inc/dev_trace.h:
+D:/universiteti/Senior\ project/senior_project/STM/Apps/Inc/binary.h:
+D:/universiteti/Senior\ project/senior_project/STM/Apps/Inc/hal_gpio.h:
+D:/universiteti/Senior\ project/senior_project/STM/Apps/Inc/global_def.h:
+D:/universiteti/Senior\ project/senior_project/STM/Apps/Inc/hal_driver_def.h:

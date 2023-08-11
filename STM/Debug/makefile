@@ -12,6 +12,7 @@ RM := rm -rf
 -include Drivers/STM32F1xx_HAL_Driver/Src/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
+-include Apps/Src/subdir.mk
 -include objects.mk
 
 ifneq ($(MAKECMDGOALS),clean)
@@ -52,6 +53,12 @@ default.size.stdout \
 OBJDUMP_LIST += \
 Senior_Project.list \
 
+OBJCOPY_HEX += \
+Senior_Project.hex \
+
+OBJCOPY_BIN += \
+Senior_Project.bin \
+
 
 # All Target
 all: main-build
@@ -60,8 +67,8 @@ all: main-build
 main-build: Senior_Project.elf secondary-outputs
 
 # Tool invocations
-Senior_Project.elf Senior_Project.map: $(OBJS) $(USER_OBJS) C:\Users\user\Desktop\P\Senior\ project\STM\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Senior_Project.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Users\user\Desktop\P\Senior project\STM\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Senior_Project.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Senior_Project.elf Senior_Project.map: $(OBJS) $(USER_OBJS) D:\universiteti\Senior\ project\senior_project\STM\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Senior_Project.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\universiteti\Senior project\senior_project\STM\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Senior_Project.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -75,12 +82,22 @@ Senior_Project.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
+Senior_Project.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "Senior_Project.hex"
+	@echo 'Finished building: $@'
+	@echo ' '
+
+Senior_Project.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "Senior_Project.bin"
+	@echo 'Finished building: $@'
+	@echo ' '
+
 # Other Targets
 clean:
-	-$(RM) Senior_Project.elf Senior_Project.list Senior_Project.map default.size.stdout
+	-$(RM) Senior_Project.bin Senior_Project.elf Senior_Project.hex Senior_Project.list Senior_Project.map default.size.stdout
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX) $(OBJCOPY_BIN)
 
 fail-specified-linker-script-missing:
 	@echo 'Error: Cannot find the specified linker script. Check the linker settings in the build configuration.'

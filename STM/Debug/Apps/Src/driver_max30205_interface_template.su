@@ -1,0 +1,6 @@
+../Apps/Src/driver_max30205_interface_template.c:47:9:max30205_interface_iic_init	4	static
+../Apps/Src/driver_max30205_interface_template.c:59:9:max30205_interface_iic_deinit	4	static
+../Apps/Src/driver_max30205_interface_template.c:75:9:max30205_interface_iic_read	16	static
+../Apps/Src/driver_max30205_interface_template.c:91:9:max30205_interface_iic_write	16	static
+../Apps/Src/driver_max30205_interface_template.c:101:6:max30205_interface_delay_ms	16	static
+../Apps/Src/driver_max30205_interface_template.c:111:6:max30205_interface_debug_print	4	static
