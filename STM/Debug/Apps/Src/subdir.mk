@@ -5,16 +5,13 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../Apps/Src/max30102_for_stm32_hal.c \
-../Apps/Src/stm32f1xx_it.c 
+../Apps/Src/max30102_for_stm32_hal.c 
 
 OBJS += \
-./Apps/Src/max30102_for_stm32_hal.o \
-./Apps/Src/stm32f1xx_it.o 
+./Apps/Src/max30102_for_stm32_hal.o 
 
 C_DEPS += \
-./Apps/Src/max30102_for_stm32_hal.d \
-./Apps/Src/stm32f1xx_it.d 
+./Apps/Src/max30102_for_stm32_hal.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -24,7 +21,7 @@ Apps/Src/%.o Apps/Src/%.su: ../Apps/Src/%.c Apps/Src/subdir.mk
 clean: clean-Apps-2f-Src
 
 clean-Apps-2f-Src:
-	-$(RM) ./Apps/Src/max30102_for_stm32_hal.d ./Apps/Src/max30102_for_stm32_hal.o ./Apps/Src/max30102_for_stm32_hal.su ./Apps/Src/stm32f1xx_it.d ./Apps/Src/stm32f1xx_it.o ./Apps/Src/stm32f1xx_it.su
+	-$(RM) ./Apps/Src/max30102_for_stm32_hal.d ./Apps/Src/max30102_for_stm32_hal.o ./Apps/Src/max30102_for_stm32_hal.su
 
 .PHONY: clean-Apps-2f-Src
 
