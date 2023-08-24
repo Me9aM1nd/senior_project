@@ -1,10 +1,10 @@
 Apps/Src/hal_driver_def.o: ../Apps/Src/hal_driver_def.c \
- D:/universiteti/Senior\ project/senior_project/STM/Apps/Inc/hal_driver_def.h \
- D:/universiteti/Senior\ project/senior_project/STM/Apps/Inc/global.h \
- D:/universiteti/Senior\ project/senior_project/STM/Apps/Inc/binary.h \
- D:/universiteti/Senior\ project/senior_project/STM/Apps/Inc/dev_trace.h \
- D:/universiteti/Senior\ project/senior_project/STM/Apps/Inc/hal_gpio.h \
- D:/universiteti/Senior\ project/senior_project/STM/Apps/Inc/global_def.h \
+ C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/hal_driver_def.h \
+ C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/global.h \
+ C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/binary.h \
+ C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/dev_trace.h \
+ C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/hal_gpio.h \
+ C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/global_def.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../Core/Inc/stm32f1xx_hal_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
@@ -26,15 +26,16 @@ Apps/Src/hal_driver_def.o: ../Apps/Src/hal_driver_def.c \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h \
+ ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
- D:/universiteti/Senior\ project/senior_project/STM/Apps/Inc/hal_driver_def.h
-D:/universiteti/Senior\ project/senior_project/STM/Apps/Inc/hal_driver_def.h:
-D:/universiteti/Senior\ project/senior_project/STM/Apps/Inc/global.h:
-D:/universiteti/Senior\ project/senior_project/STM/Apps/Inc/binary.h:
-D:/universiteti/Senior\ project/senior_project/STM/Apps/Inc/dev_trace.h:
-D:/universiteti/Senior\ project/senior_project/STM/Apps/Inc/hal_gpio.h:
-D:/universiteti/Senior\ project/senior_project/STM/Apps/Inc/global_def.h:
+ C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/hal_driver_def.h
+C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/hal_driver_def.h:
+C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/global.h:
+C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/binary.h:
+C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/dev_trace.h:
+C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/hal_gpio.h:
+C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/global_def.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 ../Core/Inc/stm32f1xx_hal_conf.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:
@@ -56,6 +57,7 @@ D:/universiteti/Senior\ project/senior_project/STM/Apps/Inc/global_def.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h:
+../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
-D:/universiteti/Senior\ project/senior_project/STM/Apps/Inc/hal_driver_def.h:
+C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/hal_driver_def.h:

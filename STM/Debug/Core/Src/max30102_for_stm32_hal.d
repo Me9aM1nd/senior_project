@@ -1,8 +1,5 @@
-Apps/Src/dev_trace.o: ../Apps/Src/dev_trace.c \
- C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/dev_trace.h \
- C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/binary.h \
- C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/hal_gpio.h \
- C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/global_def.h \
+Core/Src/max30102_for_stm32_hal.o: ../Core/Src/max30102_for_stm32_hal.c \
+ ../Core/Inc/max30102_for_stm32_hal.h ../Core/Inc/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../Core/Inc/stm32f1xx_hal_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
@@ -27,11 +24,13 @@ Apps/Src/dev_trace.o: ../Apps/Src/dev_trace.c \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
+ C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/dev_trace.h \
+ C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/binary.h \
+ C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/hal_gpio.h \
+ C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/global_def.h \
  C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/hal_driver_def.h
-C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/dev_trace.h:
-C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/binary.h:
-C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/hal_gpio.h:
-C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/global_def.h:
+../Core/Inc/max30102_for_stm32_hal.h:
+../Core/Inc/main.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 ../Core/Inc/stm32f1xx_hal_conf.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h:
@@ -56,4 +55,8 @@ C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/global_def.h
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
+C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/dev_trace.h:
+C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/binary.h:
+C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/hal_gpio.h:
+C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/global_def.h:
 C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/hal_driver_def.h:

@@ -24,7 +24,7 @@ void (*gpio_irq_cbf[16])(void);  // gpio interrupt function pointer
 //         internal Functions
 //------------------------------------------------------------------------------
 
-void EXTI0_IRQHandler(void){ (*gpio_irq_cbf[0])(); __HAL_GPIO_EXTI_CLEAR_IT(GPIO_PIN_0);}
+//void EXTI0_IRQHandler(void){ (*gpio_irq_cbf[0])(); __HAL_GPIO_EXTI_CLEAR_IT(GPIO_PIN_0);}
 void EXTI1_IRQHandler(void){ (*gpio_irq_cbf[1])(); __HAL_GPIO_EXTI_CLEAR_IT(GPIO_PIN_1);}
 void EXTI2_IRQHandler(void){ (*gpio_irq_cbf[2])(); __HAL_GPIO_EXTI_CLEAR_IT(GPIO_PIN_2);}
 void EXTI3_IRQHandler(void){ (*gpio_irq_cbf[3])(); __HAL_GPIO_EXTI_CLEAR_IT(GPIO_PIN_3);}
