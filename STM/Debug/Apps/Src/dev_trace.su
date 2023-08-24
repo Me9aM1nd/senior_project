@@ -12,5 +12,5 @@
 ../Apps/Src/dev_trace.c:273:6:debug_printf_long	32	static
 ../Apps/Src/dev_trace.c:304:6:debug_printf_hex	24	static
 ../Apps/Src/dev_trace.c:339:6:debug_printf_bin	24	static
-../Apps/Src/dev_trace.c:363:6:debug_printf	80	static
+../Apps/Src/dev_trace.c:363:6:debug_printf	112	static
 ../Apps/Src/dev_trace.c:530:6:assert_failed	16	static

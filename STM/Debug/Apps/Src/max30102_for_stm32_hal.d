@@ -1,6 +1,6 @@
-Core/Src/max30102_for_stm32_hal.o: ../Core/Src/max30102_for_stm32_hal.c \
- ../Core/Inc/max30102_for_stm32_hal.h ../Core/Inc/main.h \
- ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
+Apps/Src/max30102_for_stm32_hal.o: ../Apps/Src/max30102_for_stm32_hal.c \
+ C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/max30102_for_stm32_hal.h \
+ ../Core/Inc/main.h ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h \
  ../Core/Inc/stm32f1xx_hal_conf.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h \
@@ -29,7 +29,7 @@ Core/Src/max30102_for_stm32_hal.o: ../Core/Src/max30102_for_stm32_hal.c \
  C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/hal_gpio.h \
  C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/global_def.h \
  C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/hal_driver_def.h
-../Core/Inc/max30102_for_stm32_hal.h:
+C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/max30102_for_stm32_hal.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 ../Core/Inc/stm32f1xx_hal_conf.h:

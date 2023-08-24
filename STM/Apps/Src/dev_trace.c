@@ -391,53 +391,53 @@ void debug_printf(char* text, ...)
                   debug_printf_long(d, 'u');
                } break;
 
-//            case 'f' : 
-//               {
-//                  signed long l;
-//                  unsigned char i, m[8];  
-//                  double d = va_arg(tag, double);
+            case 'f' :
+               {
+                  signed long l;
+                  unsigned char i, m[8];
+                  double d = va_arg(tag, double);
 
-//                  if (d < 0) 
-//                  {    
-//                    d = -d; 
-//                    dev_trace_send_byte('-');
-//                  }
-//              
-//                  debug_printf_ulong(d);
-//                  dev_trace_send_byte('.');
-//                      
-//                  d =  d - (signed long)d; 
-//                  l = d * 1000000000;
+                  if (d < 0)
+                  {
+                    d = -d;
+                    dev_trace_send_byte('-');
+                  }
 
-//                  if ((l % 1000) > 500) l = l / 1000 + 1;
-//                                  else  l = l / 1000;
+                  debug_printf_ulong(d);
+                  dev_trace_send_byte('.');
 
-////                  if (l == 0)
-//  //                {
-//    //                  m[0] = '0'; 
-//      //                m[1] = 0; 
-//        //              debug_printf_text(m);
-//          //            break; 
-//            //      }    
+                  d =  d - (signed long)d;
+                  l = d * 1000000000;
 
-//                  i = 6; //sizeof(m);
-////                  while ((l % 10) == 0)
-//  //                {   
-//    //                 l = l / 10;      
-//      //               i--;
-//        //          }
+                  if ((l % 1000) > 500) l = l / 1000 + 1;
+                                  else  l = l / 1000;
 
-//                  m[i] = 0;
-//                  while (i) 
-//                  {
-//                     i--;
-//                     m[i] = 0x30 + (l % 10);
-//                     l = l / 10;      
-//                  }    
-//                  
-//                  debug_printf_text((char*)m);
-//               
-//               } break;
+//                  if (l == 0)
+  //                {
+    //                  m[0] = '0';
+      //                m[1] = 0;
+        //              debug_printf_text(m);
+          //            break;
+            //      }
+
+                  i = 6; //sizeof(m);
+//                  while ((l % 10) == 0)
+  //                {
+    //                 l = l / 10;
+      //               i--;
+        //          }
+
+                  m[i] = 0;
+                  while (i)
+                  {
+                     i--;
+                     m[i] = 0x30 + (l % 10);
+                     l = l / 10;
+                  }
+
+                  debug_printf_text((char*)m);
+
+               } break;
            
             case 's' : 
                {

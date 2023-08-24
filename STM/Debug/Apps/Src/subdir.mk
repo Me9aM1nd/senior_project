@@ -7,17 +7,20 @@
 C_SRCS += \
 ../Apps/Src/dev_trace.c \
 ../Apps/Src/hal_driver_def.c \
-../Apps/Src/hal_gpio.c 
+../Apps/Src/hal_gpio.c \
+../Apps/Src/max30102_for_stm32_hal.c 
 
 OBJS += \
 ./Apps/Src/dev_trace.o \
 ./Apps/Src/hal_driver_def.o \
-./Apps/Src/hal_gpio.o 
+./Apps/Src/hal_gpio.o \
+./Apps/Src/max30102_for_stm32_hal.o 
 
 C_DEPS += \
 ./Apps/Src/dev_trace.d \
 ./Apps/Src/hal_driver_def.d \
-./Apps/Src/hal_gpio.d 
+./Apps/Src/hal_gpio.d \
+./Apps/Src/max30102_for_stm32_hal.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -27,7 +30,7 @@ Apps/Src/%.o Apps/Src/%.su: ../Apps/Src/%.c Apps/Src/subdir.mk
 clean: clean-Apps-2f-Src
 
 clean-Apps-2f-Src:
-	-$(RM) ./Apps/Src/dev_trace.d ./Apps/Src/dev_trace.o ./Apps/Src/dev_trace.su ./Apps/Src/hal_driver_def.d ./Apps/Src/hal_driver_def.o ./Apps/Src/hal_driver_def.su ./Apps/Src/hal_gpio.d ./Apps/Src/hal_gpio.o ./Apps/Src/hal_gpio.su
+	-$(RM) ./Apps/Src/dev_trace.d ./Apps/Src/dev_trace.o ./Apps/Src/dev_trace.su ./Apps/Src/hal_driver_def.d ./Apps/Src/hal_driver_def.o ./Apps/Src/hal_driver_def.su ./Apps/Src/hal_gpio.d ./Apps/Src/hal_gpio.o ./Apps/Src/hal_gpio.su ./Apps/Src/max30102_for_stm32_hal.d ./Apps/Src/max30102_for_stm32_hal.o ./Apps/Src/max30102_for_stm32_hal.su
 
 .PHONY: clean-Apps-2f-Src
 
