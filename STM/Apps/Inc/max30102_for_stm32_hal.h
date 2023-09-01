@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MAX30102_I2C_ADDR 0x57
+#define MAX30102_I2C_ADDR 0xAE
 #define MAX30102_I2C_TIMEOUT 10
 
 #define MAX30102_BYTES_PER_SAMPLE 6
