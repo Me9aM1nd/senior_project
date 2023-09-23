@@ -1,0 +1,3 @@
+../Apps/Src/hal_driver_def.c:26:6:hal_driver_set_info	1
+../Apps/Src/hal_driver_def.c:38:15:hal_driver_set_dma_irq	4
+../Apps/Src/hal_driver_def.c:85:15:mem_alloc	3

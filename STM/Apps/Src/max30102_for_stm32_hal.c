@@ -15,7 +15,6 @@ extern "C"
  */
 __weak void max30102_plot(uint32_t ir_sample, uint32_t red_sample)
 {
-	debug_printf("rame/n/r");
     UNUSED(ir_sample);
     UNUSED(red_sample);
 }
@@ -182,26 +181,26 @@ void max30102_interrupt_handler(max30102_t *obj)
 
     if ((reg[0] >> MAX30102_INTERRUPT_A_FULL) & 0x01)
     {
-    	debug_printf("1\n\r");
+//    	debug_printf("1\n\r");
         // FIFO almost full
         max30102_read_fifo(obj);
     }
 
     if ((reg[0] >> MAX30102_INTERRUPT_PPG_RDY) & 0x01)
     {
-    	debug_printf("2\n\r");
+//    	debug_printf("2\n\r");
         // New FIFO data ready
     }
 
     if ((reg[0] >> MAX30102_INTERRUPT_ALC_OVF) & 0x01)
     {
-    	debug_printf("3\n\r");
+//    	debug_printf("3\n\r");
         // Ambient light overflow
     }
 
     if ((reg[1] >> MAX30102_INTERRUPT_DIE_TEMP_RDY) & 0x01)
     {
-    	debug_printf("4\n\r");
+//    	debug_printf("4\n\r");
         // Temperature data ready
         int8_t temp_int;
         uint8_t temp_frac;

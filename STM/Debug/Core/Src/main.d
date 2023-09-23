@@ -23,12 +23,13 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h \
- C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/max30102_for_stm32_hal.h \
- C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/dev_trace.h \
- C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/binary.h \
- C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/hal_gpio.h \
- C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/global_def.h \
- C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/hal_driver_def.h
+ C:/Users/ASUS/OneDrive/Documents/FreeUni/Senior\ Project/senior_project/STM/Apps/Inc/max30102_for_stm32_hal.h \
+ C:/Users/ASUS/OneDrive/Documents/FreeUni/Senior\ Project/senior_project/STM/Apps/Inc/dev_trace.h \
+ C:/Users/ASUS/OneDrive/Documents/FreeUni/Senior\ Project/senior_project/STM/Apps/Inc/binary.h \
+ C:/Users/ASUS/OneDrive/Documents/FreeUni/Senior\ Project/senior_project/STM/Apps/Inc/hal_gpio.h \
+ C:/Users/ASUS/OneDrive/Documents/FreeUni/Senior\ Project/senior_project/STM/Apps/Inc/global_def.h \
+ C:/Users/ASUS/OneDrive/Documents/FreeUni/Senior\ Project/senior_project/STM/Apps/Inc/hal_driver_def.h \
+ ../Core/Inc/hrspo2_converter.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 ../Core/Inc/stm32f1xx_hal_conf.h:
@@ -54,9 +55,10 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h:
-C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/max30102_for_stm32_hal.h:
-C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/dev_trace.h:
-C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/binary.h:
-C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/hal_gpio.h:
-C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/global_def.h:
-C:/Users/user/Desktop/P/Senior\ project/senior_project/STM/Apps/Inc/hal_driver_def.h:
+C:/Users/ASUS/OneDrive/Documents/FreeUni/Senior\ Project/senior_project/STM/Apps/Inc/max30102_for_stm32_hal.h:
+C:/Users/ASUS/OneDrive/Documents/FreeUni/Senior\ Project/senior_project/STM/Apps/Inc/dev_trace.h:
+C:/Users/ASUS/OneDrive/Documents/FreeUni/Senior\ Project/senior_project/STM/Apps/Inc/binary.h:
+C:/Users/ASUS/OneDrive/Documents/FreeUni/Senior\ Project/senior_project/STM/Apps/Inc/hal_gpio.h:
+C:/Users/ASUS/OneDrive/Documents/FreeUni/Senior\ Project/senior_project/STM/Apps/Inc/global_def.h:
+C:/Users/ASUS/OneDrive/Documents/FreeUni/Senior\ Project/senior_project/STM/Apps/Inc/hal_driver_def.h:
+../Core/Inc/hrspo2_converter.h:

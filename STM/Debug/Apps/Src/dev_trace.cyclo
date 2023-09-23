@@ -1,0 +1,16 @@
+../Apps/Src/dev_trace.c:49:6:dev_trace_send_byte_int	2
+../Apps/Src/dev_trace.c:72:7:dev_trace_init	4
+../Apps/Src/dev_trace.c:151:6:dev_trace_send_byte	2
+../Apps/Src/dev_trace.c:165:6:dev_trace_send_buf	3
+../Apps/Src/dev_trace.c:181:9:dev_trace_get_error	2
+../Apps/Src/dev_trace.c:191:9:dev_trace_generate_error	3
+../Apps/Src/dev_trace.c:203:7:dev_trace_generate_verror	3
+../Apps/Src/dev_trace.c:216:6:debug_printf_char	4
+../Apps/Src/dev_trace.c:227:6:debug_printf_text	2
+../Apps/Src/dev_trace.c:238:6:debug_printf_ulong	4
+../Apps/Src/dev_trace.c:262:6:debug_printf_slong	2
+../Apps/Src/dev_trace.c:273:6:debug_printf_long	6
+../Apps/Src/dev_trace.c:304:6:debug_printf_hex	6
+../Apps/Src/dev_trace.c:339:6:debug_printf_bin	6
+../Apps/Src/dev_trace.c:363:6:debug_printf	23
+../Apps/Src/dev_trace.c:530:6:assert_failed	1

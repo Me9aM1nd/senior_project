@@ -24,6 +24,7 @@
 #include <stdio.h>
 #include "max30102_for_stm32_hal.h"
 #include "dev_trace.h"
+#include "hrspo2_converter.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -77,19 +78,9 @@ uint8_t tx_buffer[128];
 uint8_t samples_buf[16];
 //uint8_t data[128];
 
-// Override plot function
-void max30102_plot(uint32_t ir_sample, uint32_t red_sample)
-{
-    // printf("ir:%u\n", ir_sample);                  // Print IR only
-    // printf("r:%u\n", red_sample);                  // Print Red only
-	debug_printf("ir:%d,r:%d\n\r", ir_sample, red_sample);    // Print IR and Red
-	memcpy(&tx_buffer[5], &ir_sample, 4);
-	memcpy(&tx_buffer[9], &red_sample, 4);
-	HAL_UART_Transmit_DMA(&huart1, samples_buf, sizeof(samples_buf));
-}
 
-// MAX30102 object
-max30102_t max30102;
+
+
 
 /* USER CODE END PV */
 
@@ -177,39 +168,8 @@ int main(void)
   memcpy(&samples_buf[1], &serial_id, 4);
   samples_buf[13] = END_MESSAGE_FAST;
 
-  max30102_init(&max30102, &hi2c1);
-//  max30102_on_interrupt(&max30102);
 
-  max30102_reset(&max30102);
-  max30102_clear_fifo(&max30102);
-
-
-  // FIFO configurations
-  max30102_set_fifo_config(&max30102, max30102_smp_ave_8, 1, 7);
-
-  // LED configurations
-  max30102_set_led_pulse_width(&max30102, max30102_pw_16_bit);
-  max30102_set_adc_resolution(&max30102, max30102_adc_2048);
-  max30102_set_sampling_rate(&max30102, max30102_sr_800);
-  max30102_set_led_current_1(&max30102, 6.2);
-  max30102_set_led_current_2(&max30102, 6.2);
-
-    // Enter SpO2 mode
-  max30102_set_mode(&max30102, max30102_spo2);
-
-   // Enable FIFO_A_FULL interrupt
-  max30102_set_a_full(&max30102, 1);
-
-  // Enable die temperature measurement
-  max30102_set_die_temp_en(&max30102, 1);
-
-  // Enable DIE_TEMP_RDY interrupt
-  max30102_set_die_temp_rdy(&max30102, 1);
-
-  uint8_t en_reg[2] = {0};
-  max30102_read(&max30102, 0x00, en_reg, 1);
-
-
+  max30102_setup();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -228,17 +188,16 @@ int main(void)
 //
 //	  }
 
-	  max30102_interrupt_handler(&max30102);
+	  max30102_loop();
 
 
-
-	  if (HAL_GetTick() - last_time > 1000){
-		  HAL_GPIO_TogglePin (GPIOC, GPIO_PIN_13);
-		  get_temp();
-		  HAL_UART_Transmit_DMA(&huart1, tx_buffer, sizeof(tx_buffer));
-		  last_time = HAL_GetTick();
-	  }
-
+//	  if (HAL_GetTick() - last_time > 1000){
+//		  HAL_GPIO_TogglePin (GPIOC, GPIO_PIN_13);
+//		  get_temp();
+//		  HAL_UART_Transmit_DMA(&huart1, tx_buffer, sizeof(tx_buffer));
+//		  last_time = HAL_GetTick();
+//	  }
+//
 
 
 
