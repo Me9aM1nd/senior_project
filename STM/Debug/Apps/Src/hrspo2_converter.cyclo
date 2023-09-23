@@ -1,3 +1,2 @@
-../Apps/Src/hrspo2_converter.c:38:6:max30102_setup	1
-../Apps/Src/hrspo2_converter.c:74:6:max30102_loop	2
-../Apps/Src/hrspo2_converter.c:110:6:max30102_plot	2
+../Apps/Src/hrspo2_converter.c:57:6:Max30102Setup	1
+../Apps/Src/hrspo2_converter.c:67:6:Max30102Loop	12
