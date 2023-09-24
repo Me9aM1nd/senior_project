@@ -64,7 +64,7 @@ void Max30102Setup()
 }
 
 // Takes samples from MAX30102.  Heart rate and SpO2 are calculated every ST seconds
-void Max30102Loop()
+void Max30102Loop(float *spo2_mean, uint32_t *heart_rate_mean, uint8_t *finger_on)
 {
   float n_spo2;
   float ratio;
@@ -148,13 +148,17 @@ void Max30102Loop()
 
   if (ch_hr_valid && ch_spo2_valid)
   {
+	  *finger_on = 1;
 	  if (HAL_GetTick()-last_time > 10000){
-		  debug_printf("SPO2: %f , Heart Rate: %d\r\n", n_spo2_sum/num, n_heart_rate_sum/num);
+		  *spo2_mean = n_spo2_sum/num;
+		  *heart_rate_mean = n_heart_rate_sum/num;
+//		  debug_printf(">>>>>>>>>>>>SPO2: %f , Heart Rate: %d\r\n", *spo2_mean, *heart_rate_mean);
 		  num = 0;
 		  n_spo2_sum = 0;
 		  n_heart_rate_sum = 0;
 		  last_time = HAL_GetTick();
 	  }
+
 	  n_spo2_sum += n_spo2;
 	  n_heart_rate_sum += n_heart_rate;
 	  num += 1;
@@ -162,7 +166,8 @@ void Max30102Loop()
   }
   else
   {
-	  debug_printf("Not valid. Are you still alive?\r\n");
+	  *finger_on = 0;
+//	  debug_printf("..........................\r\n");
   }
 }
 

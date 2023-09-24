@@ -146,10 +146,11 @@ int main(void)
   debug_printf("\r\n\n\n\n******HUMAN HEALTH MONITORING SENSOR******\r\n");
 
   uint32_t serial_id = 1717;
-  uint32_t temperature = 3755;
+//  uint32_t temperature = 3755;
   uint32_t pressure = 140000;
-  uint32_t heart_rate = 55555;
-  uint32_t saturation = 7777;
+  uint32_t heart_rate;
+  float saturation;
+  uint8_t finger_on = 1;
 
   uint32_t last_time = HAL_GetTick();
 
@@ -158,9 +159,10 @@ int main(void)
   memcpy(&tx_buffer[1], &serial_id, 4);
 //  memcpy(&tx_buffer[5], &temperature, 4);
   memcpy(&tx_buffer[9], &pressure, 4);
-  memcpy(&tx_buffer[13], &heart_rate, 4);
-  memcpy(&tx_buffer[17], &saturation, 4);
-  tx_buffer[21] = END_MESSAGE_MED;
+//  memcpy(&tx_buffer[13], &heart_rate, 4);
+//  memcpy(&tx_buffer[17], &saturation, 4);
+//  memcpy(&tx_buffer[21], &finger_on, 1);
+  tx_buffer[22] = END_MESSAGE_MED;
 
   samples_buf[0] = START_MESSAGE_FAST;
   memcpy(&samples_buf[1], &serial_id, 4);
@@ -178,13 +180,21 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
-	  Max30102Loop();
+//	  Max30102Loop();
 
 
 	  if (HAL_GetTick() - last_time > 1000){
 		  HAL_GPIO_TogglePin (GPIOC, GPIO_PIN_13);
 		  get_temp();
-		  Max30102Loop();
+		  Max30102Loop(&saturation, &heart_rate, &finger_on);
+		  if (finger_on == 1){
+			  debug_printf("........................................new SPO2: %f , Heart Rate: %d\r\n",saturation, heart_rate);
+		  }else{
+			  debug_printf("........................................Not valid. Are you still alive?\r\n");
+		  }
+		  memcpy(&tx_buffer[13], &heart_rate, 4);
+		  memcpy(&tx_buffer[17], &saturation, 4);
+		  memcpy(&tx_buffer[21], &finger_on, 1);
 		  HAL_UART_Transmit_DMA(&huart1, tx_buffer, sizeof(tx_buffer));
 		  last_time = HAL_GetTick();
 	  }
