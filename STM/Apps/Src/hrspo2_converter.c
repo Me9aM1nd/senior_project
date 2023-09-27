@@ -86,7 +86,7 @@ void Max30102Loop(float *spo2_mean, uint32_t *heart_rate_mean, uint8_t *finger_o
   // buffer length of BUFFER_SIZE stores ST seconds of samples running at FS sps
   for (i = 0U; i < BUFFER_SIZE; i++)
   {
-	while (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_12) == GPIO_PIN_SET);	// wait until the interrupt pin asserts
+//	while (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_12) == GPIO_PIN_SET);	// wait until the interrupt pin asserts
 
 #ifdef FAKE_MAX30102_CLONE
     maxim_max30102_read_fifo((aun_ir_buffer + i), (aun_red_buffer + i));  // read from MAX30102 FIFO
@@ -149,9 +149,11 @@ void Max30102Loop(float *spo2_mean, uint32_t *heart_rate_mean, uint8_t *finger_o
   if (ch_hr_valid && ch_spo2_valid)
   {
 	  *finger_on = 1;
+	  *spo2_mean = n_spo2_sum/num;
+	  *heart_rate_mean = n_heart_rate_sum/num;
 	  if (HAL_GetTick()-last_time > 10000){
-		  *spo2_mean = n_spo2_sum/num;
-		  *heart_rate_mean = n_heart_rate_sum/num;
+//		  *spo2_mean = n_spo2_sum/num;
+//		  *heart_rate_mean = n_heart_rate_sum/num;
 //		  debug_printf(">>>>>>>>>>>>SPO2: %f , Heart Rate: %d\r\n", *spo2_mean, *heart_rate_mean);
 		  num = 0;
 		  n_spo2_sum = 0;

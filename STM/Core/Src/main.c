@@ -149,6 +149,7 @@ int main(void)
 
 
   Max30102Setup();
+  uint8_t faile_counter = 0;
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -160,12 +161,21 @@ int main(void)
     /* USER CODE BEGIN 3 */
 
 //	  Max30102Loop();
-
+	  if(HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_12) == GPIO_PIN_RESET){
+		  Max30102Loop(&saturation, &heart_rate, &finger_on);
+		  if(finger_on == 0)faile_counter++;
+		  if(faile_counter > 20){
+			  HAL_I2C_DeInit(&hi2c1);
+			  HAL_Delay(10);
+			  HAL_I2C_Init(&hi2c1);
+			  faile_counter = 0;
+			  debug_printf("me movel\r\n");
+		  }
+	  }
 
 	  if (HAL_GetTick() - last_time > 1000){
 		  HAL_GPIO_TogglePin (GPIOC, GPIO_PIN_13);
 		  get_temp();
-		  Max30102Loop(&saturation, &heart_rate, &finger_on);
 		  if (finger_on == 1){
 			  debug_printf("........................................new SPO2: %f , Heart Rate: %d\r\n",saturation, heart_rate);
 		  }else{
