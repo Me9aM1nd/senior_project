@@ -42,14 +42,8 @@
 #define UART_MESSAGE_SAT   		5
 #define UART_MESSAGE_END   		6
 
-#define START_MESSAGE_FAST      0xAA
-#define END_MESSAGE_FAST        0x55
-
-#define START_MESSAGE_MED       0xBB
-#define END_MESSAGE_MED         0x66
-
-#define START_MESSAGE_SLOW      0xCC
-#define END_MESSAGE_SLOW        0x77
+#define START_MESSAGE      0xAA
+#define END_MESSAGE        0x55
 
 #define TEMP_I2C_ADDRESS        0x90
 #define TEMP_READ_ADDRESS  		0
@@ -77,7 +71,7 @@ DMA_HandleTypeDef hdma_usart1_tx;
 uint8_t tx_buffer[128];
 uint8_t samples_buf[16];
 //uint8_t data[128];
-
+uint32_t temporary_int;
 
 
 
@@ -147,26 +141,11 @@ int main(void)
 
   uint32_t serial_id = 1717;
 //  uint32_t temperature = 3755;
-  uint32_t pressure = 140000;
   uint32_t heart_rate;
-  float saturation;
+  float saturation = 0;
   uint8_t finger_on = 1;
 
   uint32_t last_time = HAL_GetTick();
-
-//  int data[] = {START_MESSAGE, serial_id, temperature, pressure, heart_rate, saturation, END_MESSAGE};
-  tx_buffer[0] = START_MESSAGE_MED;
-  memcpy(&tx_buffer[1], &serial_id, 4);
-//  memcpy(&tx_buffer[5], &temperature, 4);
-  memcpy(&tx_buffer[9], &pressure, 4);
-//  memcpy(&tx_buffer[13], &heart_rate, 4);
-//  memcpy(&tx_buffer[17], &saturation, 4);
-//  memcpy(&tx_buffer[21], &finger_on, 1);
-  tx_buffer[22] = END_MESSAGE_MED;
-
-  samples_buf[0] = START_MESSAGE_FAST;
-  memcpy(&samples_buf[1], &serial_id, 4);
-  samples_buf[13] = END_MESSAGE_FAST;
 
 
   Max30102Setup();
@@ -192,10 +171,16 @@ int main(void)
 		  }else{
 			  debug_printf("........................................Not valid. Are you still alive?\r\n");
 		  }
-		  memcpy(&tx_buffer[13], &heart_rate, 4);
-		  memcpy(&tx_buffer[17], &saturation, 4);
-		  memcpy(&tx_buffer[21], &finger_on, 1);
-		  HAL_UART_Transmit_DMA(&huart1, tx_buffer, sizeof(tx_buffer));
+		  tx_buffer[0] = START_MESSAGE;
+		  memcpy(&tx_buffer[1], &serial_id, 4);
+		  // tx_buffer[5], temp;
+		  memcpy(&tx_buffer[9], &heart_rate, 4);
+		  saturation *= 1000;
+		  temporary_int = (int)saturation;
+		  memcpy(&tx_buffer[13], &temporary_int, 4);
+		  tx_buffer[17] = finger_on;
+		  tx_buffer[18] = END_MESSAGE;
+		  HAL_UART_Transmit_DMA(&huart1, tx_buffer, 32);
 		  last_time = HAL_GetTick();
 	  }
 
@@ -416,8 +401,8 @@ float get_temp(void){
     }
 	ans += temp_buff[0];
 	ans *= 1000;
-
-	memcpy(&tx_buffer[5], &ans, 4);
+	temporary_int = (int)ans;
+	memcpy(&tx_buffer[5], &temporary_int, 4);
 	debug_printf("temp %f\n\r" , ans);
 
 }
