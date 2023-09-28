@@ -1,3 +1,4 @@
+"./Apps/Src/com_preasure.o"
 "./Apps/Src/dev_trace.o"
 "./Apps/Src/hal_driver_def.o"
 "./Apps/Src/hal_gpio.o"

@@ -5,6 +5,7 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Apps/Src/com_preasure.c \
 ../Apps/Src/dev_trace.c \
 ../Apps/Src/hal_driver_def.c \
 ../Apps/Src/hal_gpio.c \
@@ -12,6 +13,7 @@ C_SRCS += \
 ../Apps/Src/max30102_for_stm32_hal.c 
 
 OBJS += \
+./Apps/Src/com_preasure.o \
 ./Apps/Src/dev_trace.o \
 ./Apps/Src/hal_driver_def.o \
 ./Apps/Src/hal_gpio.o \
@@ -19,6 +21,7 @@ OBJS += \
 ./Apps/Src/max30102_for_stm32_hal.o 
 
 C_DEPS += \
+./Apps/Src/com_preasure.d \
 ./Apps/Src/dev_trace.d \
 ./Apps/Src/hal_driver_def.d \
 ./Apps/Src/hal_gpio.d \
@@ -33,7 +36,7 @@ Apps/Src/%.o Apps/Src/%.su: ../Apps/Src/%.c Apps/Src/subdir.mk
 clean: clean-Apps-2f-Src
 
 clean-Apps-2f-Src:
-	-$(RM) ./Apps/Src/dev_trace.d ./Apps/Src/dev_trace.o ./Apps/Src/dev_trace.su ./Apps/Src/hal_driver_def.d ./Apps/Src/hal_driver_def.o ./Apps/Src/hal_driver_def.su ./Apps/Src/hal_gpio.d ./Apps/Src/hal_gpio.o ./Apps/Src/hal_gpio.su ./Apps/Src/hrspo2_converter.d ./Apps/Src/hrspo2_converter.o ./Apps/Src/hrspo2_converter.su ./Apps/Src/max30102_for_stm32_hal.d ./Apps/Src/max30102_for_stm32_hal.o ./Apps/Src/max30102_for_stm32_hal.su
+	-$(RM) ./Apps/Src/com_preasure.d ./Apps/Src/com_preasure.o ./Apps/Src/com_preasure.su ./Apps/Src/dev_trace.d ./Apps/Src/dev_trace.o ./Apps/Src/dev_trace.su ./Apps/Src/hal_driver_def.d ./Apps/Src/hal_driver_def.o ./Apps/Src/hal_driver_def.su ./Apps/Src/hal_gpio.d ./Apps/Src/hal_gpio.o ./Apps/Src/hal_gpio.su ./Apps/Src/hrspo2_converter.d ./Apps/Src/hrspo2_converter.o ./Apps/Src/hrspo2_converter.su ./Apps/Src/max30102_for_stm32_hal.d ./Apps/Src/max30102_for_stm32_hal.o ./Apps/Src/max30102_for_stm32_hal.su
 
 .PHONY: clean-Apps-2f-Src
 

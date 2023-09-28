@@ -1,0 +1,6 @@
+../Apps/Src/com_preasure.c:26:6:init_bpm	24	static
+../Apps/Src/com_preasure.c:33:6:turn_on_bpm	8	static
+../Apps/Src/com_preasure.c:39:5:convert	24	static
+../Apps/Src/com_preasure.c:55:6:analyze_it	32	static
+../Apps/Src/com_preasure.c:74:6:bpm_thread	32	static
+../Apps/Src/com_preasure.c:97:6:HAL_UART_RxCpltCallback	16	static
