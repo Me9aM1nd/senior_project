@@ -190,6 +190,9 @@ void screen_manager_loop(){
 
   count = button_a.getCount();
   if (lastCount != count) {
+    base_p->screen_idx ++;
+    if (base_p->screen_idx == 3) base_p->screen_idx = 0;
+    
     if(base_p->screen_idx == DISPLAY_TEMP) {
       drawTemperature();
     }else if(base_p->screen_idx == DISPLAY_SAT){
