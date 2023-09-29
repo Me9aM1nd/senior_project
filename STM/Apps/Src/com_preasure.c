@@ -37,35 +37,20 @@ void turn_on_bpm(){
 }
 
 int convert(uint8_t a, uint8_t b){
-	int result = 0;
-	if( a > '9'){
-		result = (a - 'a' + 10) * 16;
-	}else{
-		result = (a - '0')*16;
-	}
+	int result = (a - 0x30) * 16 + b - 0x30;
 
-	if( b > '9'){
-		result += b - 'a' + 10;
-	}else{
-		result += b -'0';
-	}
 	return result;
 }
 
 void analyze_it (int* DIA, int* SYS, int* PUL){
 
+	char buf[20];
 	for(int q = 0; q < sizeof(buffer); q++){
-//		if(memcmp(&buffer[q], KEY_CODE, strlen(KEY_CODE)) == 0){
-//			debug_printf("ai aqedan kidee %m\r\n", &buffer[q + strlen(KEY_CODE)], 20);
-//			debug_printf("ai aqedan kidee %s\r\n", &buffer[q + strlen(KEY_CODE)]);
-//			*SYS = buffer[q + strlen(KEY_CODE) + 2];
-//			*DIA = buffer[q + strlen(KEY_CODE) + 4];
-//			*PUL = buffer[q + strlen(KEY_CODE) + 5];
-//		}
 		if(memcmp(&buffer[q], KEY_CODE, sizeof(KEY_CODE)) == 0){
+
 			*SYS = convert(buffer[q + sizeof(KEY_CODE)], buffer[q + sizeof(KEY_CODE) + 1]);
 			*DIA = convert(buffer[q + sizeof(KEY_CODE) + 2], buffer[q + sizeof(KEY_CODE) + 3]);
-			*PUL = convert(buffer[q + sizeof(KEY_CODE) + 6], buffer[q + sizeof(KEY_CODE) + 7]);
+//			*PUL = convert(buffer[q + sizeof(KEY_CODE) + 6], buffer[q + sizeof(KEY_CODE) + 7]);
 		}
 	}
 

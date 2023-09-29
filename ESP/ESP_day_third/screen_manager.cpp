@@ -191,6 +191,8 @@ void screen_manager_loop(){
   count = button_a.getCount();
   if (lastCount != count) {
     base_p->screen_idx ++;
+    lastCount = count;
+  }
     if (base_p->screen_idx == 3) base_p->screen_idx = 0;
     
     if(base_p->screen_idx == DISPLAY_TEMP) {
@@ -204,9 +206,6 @@ void screen_manager_loop(){
     }else if(base_p->screen_idx == DISPLAY_PREA){
       drawPressure();
     }
-
-    lastCount = count;
-  }
 
 }
 

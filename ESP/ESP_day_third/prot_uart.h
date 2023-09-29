@@ -68,7 +68,7 @@ typedef struct{
 
 }prot_uart_t;
 
-prot_uart_t* uart_prot_init(int speed, char rx, char tx);
+prot_uart_t* uart_prot_init(int speed, int rx, int tx);
 void uart_prot_thread(void);
 
 #endif

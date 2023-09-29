@@ -2,15 +2,15 @@
 
 #include "HardwareSerial.h"
 
-HardwareSerial stm_uart(2);
+HardwareSerial stm_uart(0);
 
 prot_uart_t base;
 
-prot_uart_t* uart_prot_init(int speed, char rx, char tx){
+prot_uart_t* uart_prot_init(int speed, int rx, int tx){
 
   stm_uart.begin(speed, SERIAL_8N1, rx, tx);
 
-  Serial.println("<UART INIT> rx: ");
+  Serial.print("<UART INIT> rx: ");
   Serial.print(rx);
   Serial.print(" tx: ");
   Serial.println(tx);

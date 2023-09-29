@@ -10,10 +10,10 @@ prot_uart_t* base_p;
 
 void setup() {
     Serial.begin(115200);
-
-    http_conn_init("Mari", "guja7777");
-    http_conn_init("AzRyGuest", "ipos.com.ge");
-    base_p = uart_prot_init(115200, 16, 17);
+ 
+    // http_conn_init("Mari", "guja7777");
+    http_conn_init("guja", "");
+    base_p = uart_prot_init(115200, 3, 1);
     // mailbox_init("Mari", "guja7777");
     screen_manager_init();
 }
